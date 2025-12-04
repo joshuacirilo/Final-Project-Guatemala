@@ -1,0 +1,98 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.place-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.place-card:hover {
+  transform: scale(1.03);
+}
+
+.place-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.place-card h2 {
+  margin: 0.8rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.place-card p {
+  margin: 0.8rem;
+  color: #555;
+}
+
+
+/*****weather dialog***/
+
+
+.weather-btn {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.weather-btn:hover {
+  background-color: #005fa3;
+}
+
+.weather-dialog {
+  border: none;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-content {
+  text-align: center;
+  position: relative;
+}
+
+#closeDialog {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.forecast-day {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 30%;
+}
+
+.forecast-day img {
+  width: 60px;
+  height: 60px;
+}

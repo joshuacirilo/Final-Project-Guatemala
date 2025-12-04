@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--tags-->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="a beautiful web site to show the marvelous of Guatemala">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:url" content="https://github.com/joshuacirilo">
+
+
+
+    
+
+
+    <!-- Style sheets here-->
+
+<link rel="stylesheet" href="./styles/base.css"> 
+<link rel="stylesheet" href="./styles/large.css"> 
+<link rel="stylesheet" href="./styles/index.css"> 
+
+
+    <!-- Favicon-->
+
+<link rel="icon" href="images/favicon.ico">
+
+
+</head>
+<body>
+
+    <!--Header -->
+    <div id="header-placeholder"></div>
+
+
+    <main>  
+        
+        <section id="hero">
+          <img src="./images/hero_guatemala.png" alt="Guatemala_Hero" class="hero-img">
+          <div class="hero-content">
+          </div>
+        </section>
+
+        <!-- ===== Culture & History Section ===== -->
+        <section id="culture-history" class="section">
+        <header class="section-header">
+            <h2>Culture &amp; History</h2>
+            <p>Guatemala is a land where ancient Mayan heritage meets vibrant modern traditions. Discover how its history, art, and customs shape the country's unique identity.</p>
+        </header>
+
+        <div class="history-container">
+            <h3>Beautiful Guatemala</h3>
+
+            <div class="cards">
+                <article class="card" data-key="history">
+                    <figure>
+                        <img src="images/history.webp" alt="Guatemalan history" />
+                        <figcaption>History</figcaption>
+                    </figure>
+                </article>
+
+                <article class="card" data-key="culture">
+                    <figure>
+                        <img src="images/culture.webp" alt="Guatemalan culture" />
+                        <figcaption>Culture</figcaption>
+                    </figure>
+                </article>
+
+                <article class="card" data-key="traditions">
+                    <figure>
+                        <img src="images/traditions.webp" alt="Guatemalan traditions" />
+                        <figcaption>Traditions</figcaption>
+                    </figure>
+                </article>
+
+           </div>             
+           
+        </div>
+        </section>
+
+        <!-- ===== Modal part ===== -->
+        <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+        </div>
+
+
+
+
+
+        
+    </main>
+
+
+
+
+
+    <!--footer  -->
+    <footer>
+    </footer>
+    
+
+<!--scripts-->
+
+<script type="module">
+  import { loadHeader } from "./scripts/loadHeader.js";
+  loadHeader();
+</script>
+
+
+<script type="module">
+  import { loadFooter } from "./scripts/loadFooter.js";
+  loadFooter();
+</script>
+
+
+<script type="module">
+  import { initModal } from "./scripts/modalmessageindex.js";
+  initModal();
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+

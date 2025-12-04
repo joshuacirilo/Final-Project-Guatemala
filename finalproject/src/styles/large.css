@@ -1,0 +1,26 @@
+@media only screen and (min-width: 35em)
+{
+    header, main, nav, footer {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    header {
+        grid-template-columns: 24px auto 44px;
+    }
+
+.hamburger {
+    display: none;
+}
+
+.navigation
+{
+    display: block;
+}
+
+.navigation ul {
+    display: flex;
+}
+
+
+}

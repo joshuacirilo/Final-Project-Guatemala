@@ -1,0 +1,83 @@
+{
+  "foods": [
+    {
+      "name": "Pepian",
+      "ingredients": [
+        "Chicken or beef",
+        "Tomatoes",
+        "Tomatillos",
+        "Chili peppers",
+        "Pumpkin seeds",
+        "Cinnamon",
+        "Cilantro"
+      ],
+      "special_fact": "Pepián is one of Guatemala’s oldest dishes and is often considered the national dish. It blends Mayan and Spanish influences in a rich, thick stew.",
+      "image": "./images/pepian.webp"
+    },
+    {
+      "name": "Kak'ik",
+      "ingredients": [
+        "Turkey meat",
+        "Coriander",
+        "Annatto",
+        "Garlic",
+        "Onion",
+        "Chili peppers",
+        "Tomatoes"
+      ],
+      "special_fact": "Kak'ik is a traditional Mayan soup with a bright red color, symbolizing blood and life. It’s typically served with rice and tamales.",
+      "image": "./images/kakik.webp"
+    },
+    {
+      "name": "Jocon",
+      "ingredients": [
+        "Chicken",
+        "Green tomatillos",
+        "Cilantro",
+        "Green onions",
+        "Corn flour",
+        "Garlic"
+      ],
+      "special_fact": "This bright green stew gets its color from tomatillos and cilantro. It is particularly popular in the western highlands of Guatemala.",
+      "image": "./images/jocon.webp"
+    },
+    {
+      "name": "Fiambre",
+      "ingredients": [
+        "Cold meats",
+        "Cheese",
+        "Pickled vegetables",
+        "Beets",
+        "Olives",
+        "Eggs"
+      ],
+      "special_fact": "Fiambre is a unique cold salad traditionally eaten on November 1st (All Saints’ Day). Families prepare it together to honor deceased loved ones.",
+      "image": "./images/fiambre.webp"
+    },
+    {
+      "name": "Tamales Colorados",
+      "ingredients": [
+        "Corn dough (masa)",
+        "Chicken or pork",
+        "Tomato sauce",
+        "Chili peppers",
+        "Olives",
+        "Banana leaves"
+      ],
+      "special_fact": "Guatemalan red tamales are wrapped in banana leaves instead of corn husks, giving them a distinct aroma and flavor.",
+      "image": "./images/tamales.webp"
+    },
+    {
+      "name": "Rellenitos de Plátano",
+      "ingredients": [
+        "Mashed ripe plantains",
+        "Black beans",
+        "Sugar",
+        "Cinnamon",
+        "Oil for frying"
+      ],
+      "special_fact": "These sweet fried plantain balls are filled with refried black beans and sugar — a popular dessert or snack found across Guatemala.",
+      "image": "./images/rellenitos.webp"
+    }
+  ]
+}

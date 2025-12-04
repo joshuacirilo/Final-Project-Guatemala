@@ -1,0 +1,141 @@
+
+/******************* site wide*****************/
+
+body {
+    background-color: #FFF8E7; /* Fondo principal */
+    color: #333333; /* Texto principal */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/******************* header *****************/
+
+header {
+    display: grid;
+    grid-template-columns: 24px auto 44px;
+    padding: 10px 20px;
+    align-items: center;
+    background-color: #1A5E63; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    column-gap: 10px;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+header span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #FFF8E7; /* Texto claro sobre el verde */
+    letter-spacing: 1px;
+}
+
+
+/******************* hamburger navigation *****************/
+
+
+.hamburger {
+
+    background: none;
+    border: none;
+    color: #3d405b;
+    cursor: pointer ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hamburger::before{
+    content: "\2630";
+    font-size: 2rem;
+}
+
+.hamburger.show::before{
+    content: "\00D7";
+
+}
+
+
+/******************* nav navigation *****************/
+
+
+.navigation{
+    display: none;
+}
+
+.navigation.show {
+  display: block;
+}
+
+.navigation ul {
+    list-style:  none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    display: block;
+    padding: .8rem 10px;
+    color: #3d405b;
+    text-decoration: none;
+    border-bottom: solid 1px #ddd;
+}
+
+
+.navigation li.current {
+    background-color: #eee;
+}
+.navigation a:hover{
+    background-color: #5393d7 ;
+}
+
+
+
+
+
+
+/** ******************** foooter  *******************/
+
+
+footer {
+    background-color: #fff;
+    padding: 1rem 5px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #ddd;
+
+}
+
+
+.Social {
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+
+}
+
+.Social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: #ccc solid 1px;
+    border-radius: 22px;
+}
+
+.Social img {
+    width: 22px;
+    height: 22px;
+}
+
+
+.Social a:hover {
+    background-color: #ddd;
+}

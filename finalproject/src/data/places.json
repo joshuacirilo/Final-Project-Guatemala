@@ -1,0 +1,54 @@
+{
+  "places": [
+    {
+      "name": "Antigua Guatemala",
+      "description": "A UNESCO World Heritage Site known for its preserved Spanish Baroque-influenced architecture and the ruins of colonial churches.",
+      "image_url": "./images/antigua_guatemala.webp",
+      "location": "Sacatepéquez Department, Guatemala",
+      "coordinates": {
+        "latitude": 14.5586,
+        "longitude": -90.7295
+      }
+    },
+    {
+      "name": "Lake Atitlán",
+      "description": "A beautiful lake surrounded by volcanoes and Mayan villages, often called one of the most beautiful lakes in the world.",
+      "image_url": "./images/lake_atitlan.webp",
+      "location": "Sololá Department, Guatemala",
+      "coordinates": {
+        "latitude": 14.6928,
+        "longitude": -91.2030
+      }
+    },
+    {
+      "name": "Tikal National Park",
+      "description": "An ancient Mayan citadel deep in the rainforest, featuring towering temples and rich archaeological significance.",
+      "image_url": "./images/tikal_national_park.webp",
+      "location": "Petén Department, Guatemala",
+      "coordinates": {
+        "latitude": 17.2230,
+        "longitude": -89.6237
+      }
+    },
+    {
+      "name": "Semuc Champey",
+      "description": "A natural monument known for its series of turquoise pools formed on a limestone bridge over the Cahabón River.",
+      "image_url": "./images/semuc_champey.webp",
+      "location": "Alta Verapaz Department, Guatemala",
+      "coordinates": {
+        "latitude": 15.5333,
+        "longitude": -90.1167
+      }
+    },
+    {
+      "name": "Pacaya Volcano",
+      "description": "An active volcano offering hiking trails and views of flowing lava, with panoramic sights of the Guatemalan highlands.",
+      "image_url": "./images/volcan_pacaya.webp",
+      "location": "Escuintla Department, Guatemala",
+      "coordinates": {
+        "latitude": 14.3828,
+        "longitude": -90.6010
+      }
+    }
+  ]
+}
