@@ -35,64 +35,45 @@
 }
 
 
-/*****weather dialog***/
 
+/***********************************************
+  BUTTONS FOR PLACE CARDS
+************************************************/
 
-.weather-btn {
-  background-color: #0077cc;
-  color: white;
-  border: none;
+/* Shared button styles */
+.place-card button {
+  display: inline-block;
   padding: 0.6rem 1.2rem;
+  margin: 0.6rem 0.3rem 0.2rem;
+  border: none;
   border-radius: 8px;
+  font-size: 0.95rem;
   cursor: pointer;
-  margin: 1rem 0;
-  transition: background-color 0.3s ease;
+  transition: all 0.25s ease-in-out;
+  font-weight: 600;
 }
 
-.weather-btn:hover {
-  background-color: #005fa3;
+/* Video button */
+.video-btn {
+  background-color: #e63946; /* red accent */
+  color: #fff;
 }
 
-.weather-dialog {
-  border: none;
-  border-radius: 15px;
-  padding: 2rem;
-  width: 90%;
-  max-width: 500px;
-  background: #fff;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+.video-btn:hover {
+  background-color: #b42533;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.35);
 }
 
-.dialog-content {
-  text-align: center;
-  position: relative;
+/* Map button */
+.map-btn {
+  background-color: #2a9d8f; /* green/teal accent */
+  color: #fff;
 }
 
-#closeDialog {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+.map-btn:hover {
+  background-color: #1e766a;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(42, 157, 143, 0.35);
 }
 
-.forecast-container {
-  display: flex;
-  justify-content: space-around;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.forecast-day {
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  padding: 0.5rem;
-  width: 30%;
-}
-
-.forecast-day img {
-  width: 60px;
-  height: 60px;
-}

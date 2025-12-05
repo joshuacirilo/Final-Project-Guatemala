@@ -1,100 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--tags-->
-    <meta property="og:title" content="">
-    <meta property="og:description" content="a beautiful web site to show the marvelous of Guatemala">
-    <meta property="og:image" content="images/logo.png">
-    <meta property="og:url" content="https://github.com/joshuacirilo">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Discover Guatemala">
+  <meta property="og:description" content="Explore iconic landmarks and beautiful destinations across Guatemala.">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:url" content="https://github.com/joshuacirilo">
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/large.css">
+  <link rel="stylesheet" href="styles/cardsplaces.css">
 
-    
-
-
-    <!-- Style sheets here-->
-
-<link rel="stylesheet" href="styles/base.css"> 
-<link rel="stylesheet" href="styles/large.css"> 
-<link rel="stylesheet" href="styles/cardsplaces.css">
-
-
-
-    <!-- Favicon-->
-
-<link rel="icon" href="images/favicon.ico">
-
+  <link rel="icon" href="images/favicon.ico">
 </head>
+
 <body>
 
-    <!--Header begining -->
-    <header>
-        <img src="images/logo.png" alt="Site logo" width="512" height="512">
-        <span>Travel and Food in Guatemala</span>
-        <button id="ham-btn" class="hamburger"></button>
+  <!-- Header -->
+  <div id="header-placeholder"></div>
 
-    </header>
-    <nav id="nav-bar" class="navigation">
-        <ul>
-            <li class="current"><a href="index.html">Home</a></li>
-            <li ><a href="#">Places</a></li>
-            <li ><a href="food.html">Food</a></li>
-        </ul>
-    </nav>
-    
-    <!--Header ends -->
+  <main>
 
-    <main>
+    <section id="places-section">
+      <h2>Discover Guatemala</h2>
+      <div id="cards" class="cards-container"></div>
+    </section>
 
+  </main>
 
-        <!--places cards-->
-        <section id="places-section">
-        <h2>Discover Guatemala</h2>
-        <div id="cards" class="cards-container"></div>
-        </section>
+  <!-- Footer -->
+  <footer></footer>
 
-        <!--weather dialog-->
-      
-        <dialog id="weatherDialog" class="weather-dialog">
-        <div class="dialog-content">
-            <button id="closeDialog">×</button>
-            <h2 id="town"></h2>
-            <p id="description"></p>
-            <img id="graphic" alt="">
-            <p id="temperature"></p>
-            <div id="forecast" class="forecast-container"></div>
-        </div>
-        </dialog>
+  <!-- Scripts -->
+  <script type="module">
+    import { loadHeader } from "./scripts/loadHeader.js";
+    import { loadFooter } from "./scripts/loadFooter.js";
 
+    loadHeader();
+    loadFooter();
+  </script>
 
-    </main>
+  <script type="module" src="./scripts/cardplaces.js"></script>
 
-
-
-
-
-    <!--footer begining  -->
-    <footer>
-        <div class="Social">
-        <a href="#" target="_blank"><img src="images/github.svg" alt="Github" width="16" height="16"></a>
-        <a href="#" target="_blank"><img src="images/linkedin.svg" alt="linkedin" width="16" height="16"></a>
-        <a href="#" target="_blank"><img src="images/facebook.svg" alt="facebook" width="16" height="16"></a>
-        </div>
-        <p>© 2025 🔭 Joshua Cirilo🔭 Guatemala</p>
-        <p id="full"></p>
-        <p id="world-full"></p>
-        <p id="short"></p>
-        <p id="medium"></p>
-        <p id="year"></p>
-    </footer>
-    <!--footer ends -->
-    
-    <!--scripts-->
-<script src="scripts/getdate.js"></script>
-<script src="scripts/navigation.js"></script>
-<script src="scripts/cardplaces.js"></script>
 </body>
 </html>

@@ -1,142 +1,80 @@
-const url = './data/places.json';
-const cards = document.querySelector('#cards');
-const weatherDialog = document.querySelector('#weatherDialog');
-const closeDialog = document.querySelector('#closeDialog');
+// Loads place cards dynamically and adds buttons for video and map features.
 
-const myTown = document.querySelector('#town');
-const myDescription = document.querySelector('#description');
-const myTemperature = document.querySelector('#temperature');
-const myGraphic = document.querySelector('#graphic');
-const myForecast = document.querySelector('#forecast');
+// Path to local JSON file
+const url = "./data/places.json";
 
-const apiKey = '959123c2bdceef89b42a24a8c0891292'; 
+// Main container for the cards
+const cards = document.querySelector("#cards");
 
+// Load places once DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  getPlacesData();
+});
 
+// Fetch places JSON
 async function getPlacesData() {
   try {
     const response = await fetch(url);
+    if (!response.ok) throw new Error("Failed to load places data.");
+
     const data = await response.json();
     displayPlaces(data.places);
+
   } catch (error) {
-    console.error('Error loading places data:', error);
+    console.error("Error loading places data:", error);
   }
 }
 
-getPlacesData();
-
-
+// Display place cards
 function displayPlaces(places) {
-  places.forEach((place) => {
-    const card = document.createElement('section');
-    const name = document.createElement('h2');
-    const description = document.createElement('p');
-    const location = document.createElement('p');
-    const image = document.createElement('img');
-    const weatherBtn = document.createElement('button');
+  if (!cards) return;
 
+  places.forEach(place => {
+    const { name, description, location, image_url } = place;
 
-    name.textContent = place.name;
-    description.textContent = place.description;
-    location.textContent = `📍 ${place.location}`;
-    weatherBtn.textContent = 'Weather';
+    // Create card container
+    const card = document.createElement("section");
+    card.classList.add("place-card");
 
+    // Create elements
+    const img = document.createElement("img");
+    img.src = image_url;
+    img.alt = `Image of ${name}`;
+    img.loading = "lazy";
 
-    image.src = place.image_url;
-    image.alt = `Image of ${place.name}`;
-    image.loading = 'lazy';
+    const title = document.createElement("h2");
+    title.textContent = name;
 
+    const desc = document.createElement("p");
+    desc.textContent = description;
 
-    card.classList.add('place-card');
-    weatherBtn.classList.add('weather-btn');
+    const loc = document.createElement("p");
+    loc.textContent = `📍 ${location}`;
 
+    // === NEW BUTTONS ===
+    const videoBtn = document.createElement("button");
+    videoBtn.textContent = "Watch Video";
+    videoBtn.classList.add("video-btn");
 
-    card.appendChild(image);
-    card.appendChild(name);
-    card.appendChild(description);
-    card.appendChild(location);
-    card.appendChild(weatherBtn);
-    cards.appendChild(card);
+    const mapBtn = document.createElement("button");
+    mapBtn.textContent = "View Map";
+    mapBtn.classList.add("map-btn");
 
-
-    weatherBtn.addEventListener('click', () => {
-      showWeatherDialog(place);
+    // Placeholder events (we will replace these with API functions later)
+    videoBtn.addEventListener("click", () => {
+      console.log(`Load video for: ${name}`);
+      alert(`Video feature coming soon for ${name}!`);
     });
+
+    mapBtn.addEventListener("click", () => {
+      console.log(`Load map for: ${name}`);
+      alert(`Map feature coming soon for ${name}!`);
+    });
+
+    // Append everything to card
+    card.append(img, title, desc, loc, videoBtn, mapBtn);
+
+    // Add card to the container
+    cards.appendChild(card);
   });
 }
-
-
-async function showWeatherDialog(place) {
-  const { latitude, longitude } = place.coordinates;
-  
-
-  const url_weather = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-  const url_forecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-
-  try {
-    const [weatherResponse, forecastResponse] = await Promise.all([
-      fetch(url_weather),
-      fetch(url_forecast)
-    ]);
-
-    const weatherData = await weatherResponse.json();
-    const forecastData = await forecastResponse.json();
-
-
-    displayResults(place, weatherData);
-    displayForecast(forecastData);
-
-
-    weatherDialog.showModal();
-
-  } catch (error) {
-    console.error('Error fetching weather data:', error);
-  }
-}
-
-
-function displayResults(place, data) {
-  myTown.textContent = place.name;
-  myDescription.textContent = data.weather[0].description;
-  myTemperature.innerHTML = `${data.main.temp.toFixed(1)}&deg;C`;
-
-  const iconCode = data.weather[0].icon;
-  const iconSrc = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-  myGraphic.src = iconSrc;
-  myGraphic.alt = data.weather[0].description;
-}
-
-
-function displayForecast(data) {
-  myForecast.innerHTML = "";
-
-
-  const dailyData = data.list
-    .filter(item => item.dt_txt.includes("12:00:00"))
-    .slice(0, 3);
-
-  dailyData.forEach((day, index) => {
-    const date = new Date(day.dt_txt);
-    const dayName = index === 0 ? "Today" :
-                    index === 1 ? "Tomorrow" : 
-                    date.toLocaleDateString('en-EN', { weekday: 'long' });
-
-    const temp = `${day.main.temp.toFixed(1)}°C`;
-    const iconCode = day.weather[0].icon;
-    const iconSrc = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-
-    const card = document.createElement('div');
-    card.classList.add('forecast-day');
-    card.innerHTML = `
-      <h4>${dayName}</h4>
-      <img src="${iconSrc}" alt="${day.weather[0].description}">
-      <p>${temp}</p>
-      <p>${day.weather[0].description}</p>
-    `;
-    myForecast.appendChild(card);
-  });
-}
-
-
-closeDialog.addEventListener('click', () => {
-  weatherDialog.close();
-});
