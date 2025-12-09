@@ -77,3 +77,31 @@
   box-shadow: 0 4px 10px rgba(42, 157, 143, 0.35);
 }
 
+
+/* video style*/
+
+.video-frame {
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+/* Maps styles */
+
+.map-frame {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  border: none;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.map-frame.loaded {
+  opacity: 1;
+}
+
