@@ -1,0 +1,1 @@
+function n(){const e=document.querySelector("#year"),t=document.querySelector("#last-modified"),o=new Date;e&&(e.innerHTML=`© ${o.getFullYear()} 🔭 Joshua Cirilo Alegría 🔭 Guatemala`),t&&(t.textContent=`Last Modification: ${document.lastModified}`)}export{n as loadDateInfo};
