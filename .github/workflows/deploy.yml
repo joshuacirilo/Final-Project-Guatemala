@@ -24,10 +24,6 @@ jobs:
         working-directory: ./finalproject
         run: npm install
 
-      - name: Fix Vite permissions
-        working-directory: ./finalproject
-        run: chmod +x node_modules/.bin/vite
-
       - name: Build project
         working-directory: ./finalproject
         run: npm run build
@@ -36,4 +32,3 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: finalproject/dist
-          clean: true
