@@ -1,10 +1,12 @@
 import { defineConfig } from "vite";
 
-export default defineConfig({
-  root: "src",
-  base: "/Final-Project-Guatemala/",
-  build: {
-    outDir: "../dist",
-    emptyOutDir: true,
-  }
+export default defineConfig(({ command }) => {
+  return {
+    root: "src",
+    base: command === "serve" ? "/" : "/Final-Project-Guatemala/",
+    build: {
+      outDir: "../dist",
+      emptyOutDir: true,
+    }
+  };
 });
