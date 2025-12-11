@@ -4,15 +4,18 @@ export async function loadFooter() {
   if (!footerElement) return;
 
   try {
-    const response = await fetch("partials/footer.html");
+    // ✔ Must use relative path for GitHub Pages
+    const response = await fetch("./partials/footer.html");
     const footerHTML = await response.text();
     footerElement.innerHTML = footerHTML;
 
-    // After the footer loads, run getdate
+    // Load getdate.js AFTER footer is inserted
     import("./getdate.js").then(module => {
-      module.loadDateInfo(); // If using modular version
+      if (module.loadDateInfo) {
+        module.loadDateInfo();
+      }
     });
-    
+
   } catch (error) {
     console.error("Error loading footer:", error);
   }

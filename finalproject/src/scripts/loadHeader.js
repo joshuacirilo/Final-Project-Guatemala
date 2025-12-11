@@ -4,7 +4,8 @@ export async function loadHeader() {
   if (!headerPlaceholder) return;
 
   try {
-    const response = await fetch("partials/header.html");
+    // ✔ MUST be relative path for GitHub Pages
+    const response = await fetch("./partials/header.html");
     const headerHTML = await response.text();
     headerPlaceholder.innerHTML = headerHTML;
 
