@@ -3,7 +3,10 @@ export function initNavigation() {
   const hamButton = document.querySelector("#ham-btn");
   const nav = document.querySelector("#nav-bar");
 
-  if (!hamButton || !nav) return;
+  if (!hamButton || !nav) {
+    console.warn("Navigation elements not found");
+    return;
+  }
 
   // Toggle mobile menu
   hamButton.addEventListener("click", () => {
@@ -11,7 +14,7 @@ export function initNavigation() {
     hamButton.classList.toggle("show");
   });
 
-  // Optional: Close menu when clicking a link
+  // Close menu when clicking a link
   nav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       nav.classList.remove("show");
@@ -19,7 +22,7 @@ export function initNavigation() {
     });
   });
 
-  // Optional: Responsive behavior (close menu on desktop resize)
+  // Close menu on window resize
   window.addEventListener("resize", () => {
     if (window.innerWidth > 800) {
       nav.classList.remove("show");
